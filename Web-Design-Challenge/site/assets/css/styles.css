@@ -1,0 +1,51 @@
+
+
+.mainHeader {
+    color: #4aaaa5;
+    margin-bottom: 25px;
+}
+
+.graphics {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+.card-header {
+    color: #4aaaa5;
+    margin-bottom: 25px;
+}
+
+.sidebar_vis div {
+    float:left;
+    margin: 10px 0;
+}
+
+.sidebar_vis img {
+    border-color:#5bc0de;
+    width: 100%;
+}
+
+.topCol {
+    padding-top: 30px;
+}
+
+.sampleGraph {
+    width:280px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.imgFull {
+    width:100%;
+}
+
+.imgOn {
+    border-color:#f89406;
+}
+
+a:hover img {
+    border-color:#5bc0de;
+}
