@@ -3,7 +3,7 @@ Central American and South American origin.  There are a total of 15 countries o
 communitites. For Central American-Americans the countries of origin are Guatemala, El Salvador, 
 Honduras, Nicaragua, and Costa Rica, who on September 15, 1821, declared their independence from Spain 
 and formed the United Republics of Central America.  Also, I included Panama in the Central America region.
-Although Panama geographically is in the Central Isthmus, until the early 1900s, Panama formed part of 
+Although Panama geographically is in the Central American Isthmus, until the early 1900s, Panama formed part of 
 Colombia, and Panama is linguistically, culturally, historically, etc. more like a South American nation.
 
 The countries included in the South American region are the aforementioned Colombia, Venezuela, and Ecuador, 
