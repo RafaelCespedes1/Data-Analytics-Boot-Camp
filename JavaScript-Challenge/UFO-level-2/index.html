@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>UFO Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.max.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+ 
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">UFO Sightings
+            <img class="nav-ufo" src="static/images/ufo.svg">
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>UFO Sightings</h1>
+      <p>The Truth is Out There</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a Date</label>
+                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                  <hr>
+                  <!-- Country search -->
+                  <fieldset>
+                    <input type = "checkbox" id = "chkus" value = "us" />
+                    <label for = "chkus">us</label>
+                    <input type = "checkbox" id = "chkca" value = "ca" />
+                    <label for = "chkca">ca</label>
+                    <button type = "button" class="btn btn-default" onclick = "order()">select country(ies) </button>
+                    <h4>Your selection: </h4>
+                    <div id = "output"></div>
+                  </fieldset>
+                  <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="country" checked> All<br/>
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="country"> us
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="country"> ca
+                    </label>
+                  </div> -->
+                  <hr>
+                  <!-- State or Province Search -->
+                  <li class="filter list-group-item nav-item dropdown" id="navbarCollapse">
+                    <label class="others nav-link active dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Enter a State <br> or Province<span class="sr-only">(current)</span></label>
+                    <input class="form-control" id="state" type="text" placeholder="ia">
+                  </li>
+                  <button id="filter-btn2" type="button" class="btn btn-default btn-secondary btn-block">Search for state <br> or province<span class="sr-only">(current)</span></button>
+                  <hr>
+                  <!-- City search -->
+                  <li class="filter list-group-item nav-item dropdown" id="navbarCollapse">
+                    <label class="others nav-link active dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Enter a City<span class="sr-only">(current)</span></label>
+                    <input class="form-control" id="city" type="text" placeholder="seattle">
+                  </li>
+                  <button id="filter-btn3" type="button" class="btn btn-default btn-secondary btn-block">Search for City</button>
+                  <hr>
+                  <!-- Search Table -->
+                  <span>JavaScript Filter Table Data</span>
+                  <input type="search" placeholder="Search..." class="form-control search-input" data-table="sightings-list"/>
+                  <hr>
+                  <!-- Reset table -->
+                  <button id="reset-btn" type="reset" class="btn btn-default btn-lg btn-block">Reset Table</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="ufo-table" class="table table-striped sightings-list">
+              <thead>
+                <tr>
+                  <th class="table-head">Date</th>
+                  <th class="table-head">City</th>
+                  <th class="table-head">State</th>
+                  <th class="table-head">Country</th>
+                  <th class="table-head">Shape</th>
+                  <th class="table-head">Duration</th>
+                  <th class="table-head">Comments</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">UFO Sightings</span>
+    </footer>
+  </div>
+  <script>
+    (function(document) {
+      'use strict';
+
+      var TableFilter = (function(myArray) {
+        var search_input;
+        
+        function _onInputSearch(e) {
+          search_input = e.target;
+          var tables = document.getElementsByClassName(search_input.getAttribute('data-table'));
+          myArray.forEach.call(tables, function(table) {
+            myArray.forEach.call(table.tBodies, function(tbody) {
+              myArray.forEach.call(tbody.rows, function(row) {
+                var text_content = row.textContent.toLowerCase();
+                var search_val = search_input.value.toLowerCase();
+                row.style.display = text_content.indexOf(search_val) > -1 ? ' ' : 'none';
+              });
+            });
+          });
+        }
+      
+        return {
+          init: function() {
+            var inputs = document.getElementsByClassName('search-input');
+            myArray.forEach.call(inputs, function(input) {
+              input.oninput = _onInputSearch;
+            });
+          }
+        };
+      })(Array.prototype);
+
+      document.addEventListener('readystatechange', function() {
+        if (document.readyState === 'complete') {
+          TableFilter.init();
+        }
+      });
+
+    })(document); 
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+
+</html>
