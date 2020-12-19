@@ -8,8 +8,7 @@ This will open up a pop up window and click on the open window button
 A new tab opens up in my internet browser.  I then change the url from http://0.0.0.0:8000/ to 
 127.0.0.1:8000/Leaflet-Step-1 in my computer.  For the grader, maybe you do not need the Leaflet-Step-1 or you may not need to change the 0.0.0.0:8000
 I am using a Windows 10 Home 64 bit OS.
-The Test Subject ID defaults to 940, and the demographic info, bar chart, gauge and bubbles charts default to this subject data.  See how everything changes
-by changing the test subject id in the dropdown menu.  The bonus part about the gauge chart was incorporated into the main app.js, so no need for a bonus.js file. I am glad that I got everything to work fine.
+
 ## Background
 
 ![1-Logo](Images/1-Logo.png)
