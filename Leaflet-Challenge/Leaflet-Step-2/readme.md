@@ -6,7 +6,7 @@ A couple of lines show up at the bottom screen.
 I press ctrl and click on the (http://0.0.0.0:8000/)
 This will open up a pop up window and click on the open window button
 A new tab opens up in my internet browser.  I then change the url from http://0.0.0.0:8000/ to 
-127.0.0.1:8000/Leaflet-Step-1 in my computer.  For the grader, maybe you do not need the Leaflet-Step-1 or you may not need to change the 0.0.0.0:8000
+127.0.0.1:8000/Leaflet-Step-2 in my computer.  For the grader, maybe you do not need the Leaflet-Step-1 or you may not need to change the 0.0.0.0:8000
 I am using a Windows 10 Home 64 bit OS.
 
 ## Background
